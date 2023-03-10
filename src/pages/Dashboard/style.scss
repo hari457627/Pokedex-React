@@ -1,0 +1,215 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.main {
+    padding: pxToRem(64) pxToRem(28) pxToRem(64) pxToRem(28);
+    background-color: $bg-primary;
+    height: 100vh;
+    overflow-y: auto;
+
+    @media only screen and (min-width: 768px) {
+        padding: pxToRem(40) pxToRem(70) pxToRem(40) pxToRem(70);
+    }
+}
+
+.heading-block{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: pxToRem(12);
+
+    @media only screen and (min-width: 768px) {
+        gap: pxToRem(30);
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.vertical-line{
+    background-color: $secondary;
+    height: pxToRem(1);
+    width: 100%;
+
+    @media only screen and (min-width: 768px) {
+        height: pxToRem(53);
+        width: pxToRem(1);
+    }
+}
+
+.heading{
+    @extend .heading-1;
+    color: $primary;
+}
+
+.sub-heading{
+    @extend .heading-2;
+    color: $secondary;
+}
+
+.action-block{
+    margin-top: pxToRem(35);
+    width: 100%;
+    display: flex;
+    gap: pxToRem(21);
+
+    @media only screen and (min-width: 768px) {
+        margin-top: pxToRem(50);
+        gap: pxToRem(42);
+    }
+}
+
+.search-block{
+    width: 80%;
+
+    @media only screen and (min-width: 768px) {
+        width: 50%; 
+    }
+
+    .action-label{
+        display: none;
+
+        @media only screen and (min-width: 768px) {
+            display: block;
+        }
+    }
+}
+
+.filter-block{
+    width: 20%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+
+    @media only screen and (min-width: 768px) {
+        width: 50%; 
+        display: flex;
+        gap: pxToRem(42);
+        align-items: start;
+    }
+}
+
+.filter-mobile-button-block{
+    display: block;
+
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.filter-mobile-button{
+    background-color: $primary !important;
+    border-radius: pxToRem(8) !important;
+    height: pxToRem(58);
+    width: pxToRem(76);   
+}
+
+.filter-mobile-button-icon{
+    svg{
+        fill: $white;
+        font-size: pxToRem(35);
+    }
+}
+
+.filter-actions-block{
+    display: none;
+
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        gap: pxToRem(42);
+        width: 100%;
+    }
+}
+
+.list-block{
+    margin-top: pxToRem(30);
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: pxToRem(19);
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    @media only screen and (min-width: 600px) {
+        gap: pxToRem(42);
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media only screen and (min-width: 769px) {
+        margin-top: pxToRem(40);
+    }
+
+    @media only screen and (min-width: 769px) and (max-width: 1200px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @media only screen and (min-width: 1400px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+.loader{
+    color: $primary !important;
+}
+
+.filter-stats-block{
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+    border: 1px solid $border-primary !important;
+    color: $primary !important;
+
+    svg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: pxToRem(5);
+    }
+}
+
+.stats-popover{
+    width: pxToRem(670);
+    border-radius: pxToRem(8);
+}
+
+.list-actions{
+    position: inherit;
+    background-color: inherit;
+    box-shadow: none;
+    border: none;
+    justify-content: space-between;
+    padding: 0;
+
+    @media only screen and (min-width: 768px) {
+        justify-content: end;
+    }
+
+    button {
+        width: 50%;
+        gap: pxToRem(10);
+        
+        @media only screen and (min-width: 768px) {
+            width: auto;
+        }
+    }
+
+    .Mui-disabled {
+        background-color: $disabled !important;
+
+        svg{
+            fill: $white !important;
+        }
+    }
+}

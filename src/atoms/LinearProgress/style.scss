@@ -1,0 +1,27 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.MuiLinearProgress-determinate {
+    height: pxToRem(13) !important;
+    background-color: $bg-primary-3 !important;
+}
+
+.MuiLinearProgress-bar{
+    background-color: $primary !important;
+}
+
+.lineasr-progress-block{
+    position: relative;
+
+    div:last-child{
+        min-width: 0;
+    }
+}
+
+.linear-progress-value{
+    position: absolute !important;
+    left: pxToRem(5) !important;
+    top: 0 !important;
+    font-size: pxToRem(10) !important;
+    color: $white !important;
+}

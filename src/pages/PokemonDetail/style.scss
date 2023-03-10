@@ -1,0 +1,247 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.detail-page-block{
+    padding: pxToRem(31);
+    background-color: $bg-primary;
+    height: 100vh;
+    overflow-y: auto;
+
+    @media only screen and (min-width: 768px) {
+        padding: pxToRem(41);
+    }
+}
+
+.detail-page-content{
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(24);
+
+    @media only screen and (min-width: 768px) {
+        gap: pxToRem(34);
+    }
+}
+
+.detail-page-header-block{
+    display: grid;
+    gap: pxToRem(24);
+    grid-template-columns: 1fr 1fr;
+
+    @media only screen and (min-width: 768px) {
+        gap: pxToRem(43);
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.detail-page-profile-image{
+    .card-image-block{
+        height: 100%;
+    }
+}
+
+.detail-page-header{
+    display: flex;
+    gap: pxToRem(45);
+    align-items: center;
+    display: none;
+
+    @media only screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.detail-page-actions{
+    display: flex;
+    flex-wrap: wrap;
+    width: max-content;
+}
+
+.detail-page-pokemon-index{
+    border: none;
+    text-align: left;
+    @extend .heading-5-normal;
+    color: $primary;
+
+    @media only screen and (min-width: 768px) {
+        border-left: pxToRem(1) solid $secondary;
+        border-right: pxToRem(1) solid $secondary;
+        text-align: center;
+    }
+}
+
+.detail-page-pokemon-title{
+    @extend .heading-5-bold;
+    color: $primary;
+}
+
+.detail-page-specification-item{
+    margin-bottom: pxToRem(34);
+}
+
+.detail-page-specification-item-label{
+    @extend .label-3-bold;
+    color: $primary;
+}
+
+.detail-page-specification-item-value{
+    text-transform: capitalize;
+}
+
+.detail-page-specification-block{
+    margin-top: pxToRem(60);
+    @media only screen and (min-width: 768px) {
+        margin-top: pxToRem(70);
+    }
+}
+
+.detail-page-specification-block-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        margin-top: pxToRem(70);
+    }
+}
+
+.detail-page-specification-block-2{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.detail-page-specification-block-2-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.type-value-block{
+    display: flex;
+    gap: pxToRem(5);
+    flex-wrap: wrap;
+}
+
+.type-block{
+    height: pxToRem(24);
+    border-radius: pxToRem(5);
+    border: pxToRem(1) solid $primary;
+    text-transform: capitalize;
+    padding: pxToRem(7);
+    @extend .label-3-normal;
+}
+
+.detail-page-stats-block{
+    padding: pxToRem(22) pxToRem(20) pxToRem(36) pxToRem(53);
+    background-color: $bg-primary-2;
+    border-radius: 0;
+    margin-top: pxToRem(20);
+
+    @media only screen and (min-width: 768px) {
+        padding: pxToRem(22) pxToRem(44) pxToRem(20) pxToRem(20);
+        margin-top: pxToRem(74);
+        border-radius: pxToRem(8);
+    }
+}
+
+.detail-page-stats-block-title{
+    @extend .heading-7;
+    margin-bottom: pxToRem(19);
+}
+
+.detail-page-stats{
+    display: grid;
+    grid-template-columns: 1fr; 
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+.detail-page-stats-item{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: pxToRem(27);
+}
+
+.detail-page-stats-item-title{
+    @extend .label-3;
+    color: $primary;
+    text-transform: capitalize;
+}
+
+.detail-page-stats-item-progressbar{
+    display: flex;
+    align-items: center;
+}
+
+.detail-page-mobile-header-title-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-page-mobile-header-block{
+    display: block;
+    margin-bottom: pxToRem(32);
+
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.detail-page-mobile-action-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+
+    .mobile-filter-footer-block{
+        position: inherit;
+        background-color: inherit;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .range-filter-footer-actions-apply{
+        @extend .label-2;
+        gap: pxToRem(15);
+    }
+
+    .Mui-disabled{
+        background-color: $disabled !important;
+
+        svg{
+            fill: $white !important;
+        }
+    }
+}
+
+.detail-page-evolution-block{
+    margin-top: pxToRem(68);
+
+    @media only screen and (min-width: 768px) {
+        gap: pxToRem(90);
+    } 
+}
+
+.detail-page-evolution-block-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: pxToRem(10);
+
+    @media only screen and (min-width: 768px) {
+        gap: pxToRem(30);
+    }
+
+    .card-block{
+        flex: 1;
+    }
+}

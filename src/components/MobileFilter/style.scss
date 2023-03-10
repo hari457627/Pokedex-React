@@ -1,0 +1,41 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.mobile-filter-block{
+    padding: pxToRem(28) pxToRem(30) pxToRem(20) pxToRem(30);
+    height: 95vh;
+}
+
+.mobile-filter-header-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: pxToRem(9);
+    border-bottom: pxToRem(1) solid $primary;
+}
+
+.mobile-filter-content-block{
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(20);
+    overflow-y: scroll;
+    height: 80vh;
+    padding-top: pxToRem(20);
+    padding-bottom: pxToRem(20);
+}
+
+.mobile-filter-footer-block{
+    justify-content: space-between;
+    height: pxToRem(67);
+    background-color: $white;
+    align-items: center;
+    box-shadow: 0 pxToRem(4) pxToRem(14) rgba(46, 49, 86, 0.4);
+    position: absolute;
+    width: -webkit-fill-available;
+    padding: pxToRem(0) pxToRem(30) pxToRem(0) pxToRem(30);
+    bottom: pxToRem(0);
+
+    button{
+        width: 50%;
+    }
+}

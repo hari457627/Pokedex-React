@@ -1,0 +1,41 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.accordion-block{
+    border: 1px solid $primary;
+    box-shadow: none !important;
+    border-radius: pxToRem(8);
+}
+
+.accordion-header{
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 1fr;
+    width: 100%;
+    align-items: center;
+}
+
+.accordion-header-title{
+    @extend .heading-6;
+    color: $primary;
+}
+
+.accordion-header-icon{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.accordion-content-fields{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.accordion-content-checkbox-field{
+    svg{
+        fill: $primary !important;
+    }
+}

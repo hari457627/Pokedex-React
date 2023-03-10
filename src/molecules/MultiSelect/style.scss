@@ -1,0 +1,47 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.action-block-item{
+    text-transform: capitalize;
+}
+
+.action-multi-select-item{
+    ul{
+        padding: pxToRem(15);
+    }
+}
+
+.action-multi-select-menu-item-block{
+    padding: pxToRem(15);
+
+    label{
+        @extend .label-2;
+        color: $primary !important;
+        height: pxToRem(26);
+    }
+}
+
+.divider{
+    height: pxToRem(1);
+    background-color: $primary;
+}
+
+.action-multi-select-menu-item{
+    width: 100%;
+    height: pxToRem(26);
+    margin-top: pxToRem(5);
+    text-transform: capitalize;
+}
+
+.action-multi-select-menu{
+    display: flex;
+    gap: pxToRem(10);
+}
+
+.action-multi-select-menu-item-icon{
+    width: pxToRem(15);
+
+    svg{
+        fill: $primary !important;
+    }
+}

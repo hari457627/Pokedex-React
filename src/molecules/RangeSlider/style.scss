@@ -1,0 +1,48 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.range-slider-block{
+    height: pxToRem(31);
+    border-radius: pxToRem(8);
+    border: 1px solid $primary;
+    padding: pxToRem(7);
+    display: flex;
+    gap: pxToRem(8);
+    align-items: center;
+}
+
+.range-slider-level-indicators{
+    @extend .heading-3;
+}
+
+.range-slider{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.range-slider-handle{
+    height: pxToRem(17);
+    width: pxToRem(26);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: pxToRem(10);
+    line-height: pxToRem(12);
+    color: $white;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: pxToRem(50);
+    cursor: grab;
+}
+
+.range-slider-track{
+    height: pxToRem(5);
+    background-color: $range-track-color;
+}
+
+.range-slider-track-mark{
+    background-color: $primary;
+}

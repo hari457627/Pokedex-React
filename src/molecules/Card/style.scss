@@ -1,0 +1,40 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.card-block{
+    border: pxToRem(1) solid $primary;
+    border-style: dashed;
+    border-radius: pxToRem(8);
+    height: pxToRem(227);
+    display: flex;
+    flex-direction: column;
+    padding: pxToRem(15);
+
+    @media only screen and (min-width: 768px) {
+        height: pxToRem(277);
+        padding: pxToRem(20);
+    }
+}
+
+.card-title-block{
+    text-align: center;
+}
+
+.card-title{
+    @extend .heading-3-bold;
+}
+
+.card-sub-title{
+    @extend .heading-3-normal;
+}
+
+.card-image-block{
+    height: 80%;
+    width: 100%;
+
+    img{
+        height: inherit;
+        width: inherit;
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,50 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.stats-range-block{
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(18);
+
+    @media only screen and (min-width: 768px) {
+        gap: pxToRem(20);
+    }
+}
+
+.stats-range-block-item{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.stats-range-block-item-slider{
+    flex: 1;
+}
+
+.stats-range-block-item-label{
+    display: none;
+    @extend .heading-4-normal;
+
+    @media only screen and (min-width: 768px) {
+        display: block;
+        text-transform: capitalize;
+        color: $primary; 
+    }
+}
+
+.stats-range-block-item-mobile-label{
+    display: block;
+    text-transform: capitalize;
+    color: $primary; 
+    @extend .label-2;
+    margin-bottom: pxToRem(5);
+
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+}

@@ -1,0 +1,156 @@
+@import "./variables.scss";
+
+// base size
+$basesize: 16;
+
+@function pxToRem($value) { 
+    @return ($value / $basesize) * 1rem;
+}
+
+.heading-1{
+    font-size: pxToRem(30);
+    line-height: pxToRem(35);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+}
+
+.heading-2{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: pxToRem(16);
+    line-height: pxToRem(19);
+
+    @media only screen and (min-width: 768px) {
+        font-size: pxToRem(20);
+        line-height: pxToRem(23);
+    }
+}
+
+.label-1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: pxToRem(16);
+    line-height: pxToRem(19);
+    color: $secondary;
+    margin-left: pxToRem(15);
+}
+
+.heading-3{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: pxToRem(16);
+    line-height: pxToRem(19);
+    @media only screen and (min-width: 768px) {
+        font-size: pxToRem(20);
+        line-height: pxToRem(23);
+    }
+}
+
+.heading-3-bold{
+    @extend .heading-3;
+    font-weight: 600;
+}
+
+.heading-3-normal{
+    @extend .heading-3;
+    font-weight: 400;
+}
+
+.heading-4{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: pxToRem(18);
+    line-height: pxToRem(21);
+}
+
+.heading-4-bold{
+    @extend .heading-4;
+    font-weight: 600;
+}
+
+.heading-4-normal{
+    @extend .heading-4;
+    font-weight: 400;
+}
+
+.heading-5{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: pxToRem(30);
+    line-height: pxToRem(35);
+}
+
+.heading-5-bold{
+    @extend .heading-5;
+    font-weight: 700;
+}
+
+.heading-5-normal{
+    @extend .heading-5;
+    font-weight: 400;
+}
+
+.action-block-item{
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(5);
+    width: 100%;
+}
+
+.action-label{
+    @extend .label-1;
+}
+
+.label-2{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: pxToRem(14);
+    line-height: pxToRem(16);
+}
+
+.heading-6{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: pxToRem(18);
+    line-height: pxToRem(21);
+}
+
+.heading-6-bold{
+    @extend .heading-6;
+    font-weight: 800;
+}
+
+.heading-6-normal{
+    @extend .heading-6;
+    font-weight: 400;
+}
+
+.label-3{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: pxToRem(16);
+    line-height: pxToRem(25);
+}
+
+.label-3-bold{
+    @extend .label-3;
+    font-weight: 700;
+}
+
+.label-3-normal{
+    @extend .label-3;
+    font-weight: 400;
+}
+
+.heading-7{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: pxToRem(20);
+    line-height: pxToRem(25);
+}

@@ -1,0 +1,7 @@
+@import "../../mixins.scss";
+
+.searchbar{
+    height: pxToRem(57);
+    border-radius: pxToRem(8);
+    border: none;
+}

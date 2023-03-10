@@ -1,0 +1,58 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.range-filter-block{
+    padding: pxToRem(20) pxToRem(39) pxToRem(24) pxToRem(28);
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(35);
+}
+
+.range-filter-header-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range-filter-header{
+    color: $primary;
+    @extend .heading-5-bold;
+}
+
+.range-filter-footer-actions{
+    display: flex;
+    justify-content: end;
+    gap: pxToRem(10);
+    z-index: 1;
+}
+
+.range-filter-footer-actions-reset{
+    height: pxToRem(37);
+    border-radius: pxToRem(8);
+    color: $primary !important;
+    border: 1px solid $primary !important;
+}
+
+.range-filter-footer-actions-apply{
+    height: pxToRem(37);
+    border-radius: pxToRem(8);
+    background-color: $primary !important;
+    color: $white !important;
+}
+
+.range-filter-header-actions{
+    justify-content: end;
+    height: pxToRem(20);
+    width: pxToRem(20);
+
+    svg{
+        fill: $primary !important;
+    }
+}
+
+.Mui-disabled{
+    svg{
+        fill: $disabled !important;
+    }
+}
