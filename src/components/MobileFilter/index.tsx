@@ -44,10 +44,10 @@ function MobileFilter({ typesMasterData, genderMasterData, selectedGenders, sele
                 </div>
             </div>
             <div className="range-filter-footer-actions mobile-filter-footer-block">
-                <Button onClick={onReset} className="range-filter-footer-actions-reset">
+                <Button ariaLabel="click to reset filters" onClick={onReset} className="range-filter-footer-actions-reset">
                     Reset
                 </Button>
-                <Button onClick={onApply} className="range-filter-footer-actions-apply">
+                <Button ariaLabel="click to apply filters" onClick={onApply} className="range-filter-footer-actions-apply">
                     Apply
                 </Button>
             </div>

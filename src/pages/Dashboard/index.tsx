@@ -301,23 +301,24 @@ function Dashboard() {
                 </div>
                 <div className="filter-block">
                     <div className="filter-mobile-button-block">
-                        <Button className="filter-mobile-button" onClick={handleOpenMobileFilter}>
+                        <Button ariaLabel="mobile filter button" className="filter-mobile-button" onClick={handleOpenMobileFilter}>
                             <IconButton className="filter-mobile-button-icon" aria-label="filter" component="label">
                                 <TuneIcon />
                             </IconButton>
                         </Button>
                     </div>
                     <div className="filter-actions-block">
-                        <MultiSelect label={'Type'} selected={newSelectedTypes} onChange={handleFilterChange} options={typesList} id='type' />
-                        <MultiSelect label={'Gender'} selected={newSelectedGenders} onChange={handleFilterChange} options={genderMasterData} id='gender' />
+                        <MultiSelect aria-label={'type'} label={'Type'} selected={newSelectedTypes} onChange={handleFilterChange} options={typesList} id='type' />
+                        <MultiSelect aria-label={'gender'} label={'Gender'} selected={newSelectedGenders} onChange={handleFilterChange} options={genderMasterData} id='gender' />
                         <div className="action-block-item">
                             <label className="action-label">Stats</label>
                             <Button
                                 id="demo-customized-button"
-                                aria-controls={open ? 'demo-customized-menu' : undefined}
-                                aria-haspopup="true"
-                                aria-expanded={open ? 'true' : undefined}
-                                aria-describedby={id}
+                                ariaControls={open ? 'demo-customized-menu' : ''}
+                                ariaHaspopup="true"
+                                ariaExpanded={open ? 'true' : undefined}
+                                ariaLabel="Stats menu button"
+                                ariaDescribedby={id}
                                 onClick={handleOpenStats}
                                 endIcon={open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                                 className="filter-stats-block"
@@ -344,7 +345,7 @@ function Dashboard() {
             </div>
             <div aria-live="polite">
                 <span className="hidden">{data?.length} pokemons found</span>
-                <ul className="list-block">
+                <ul id="list-items" className="list-block">
                     {
                         loading ? <Loader className="loader" />
                             :
@@ -367,10 +368,10 @@ function Dashboard() {
                 (!loading && pokemonsData?.results?.length)
                 ?
                 <div className="range-filter-footer-actions mobile-filter-footer-block list-actions">
-                    <Button className="range-filter-footer-actions-apply" disabled={!pokemonsData?.previous} onClick={showPreviousPokemons}>
+                    <Button ariaLabel="click to view previous 20 pokemons" className="range-filter-footer-actions-apply" disabled={!pokemonsData?.previous} onClick={showPreviousPokemons}>
                         <WestIcon /> <span>Prev</span>
                     </Button>
-                    <Button className="range-filter-footer-actions-apply" disabled={!pokemonsData?.next} onClick={showNextPokemons}>
+                    <Button ariaLabel="click to view next 20 pokemons" className="range-filter-footer-actions-apply" disabled={!pokemonsData?.next} onClick={showNextPokemons}>
                         <span>Next</span> <EastIcon />
                     </Button>
                 </div>

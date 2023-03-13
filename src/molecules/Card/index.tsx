@@ -18,11 +18,8 @@ function Card (pokemonDetails:cardProps){
         onClick && onClick(e, id, pokemonData, index);
     };
 
-    let styleObj = {cursor: onClick ? 'pointer' : 'auto'};
-    if(style) styleObj = {...styleObj, ...style};
-
     return (
-        <div className="card-block" style={styleObj} onClick={handleClick} role="button">
+        <div className="card-block" style={style} onClick={handleClick} role="button">
             <div className="card-image-block">
                 <img src={imgUrl} alt={name || 'pokemon image'}/>
             </div>

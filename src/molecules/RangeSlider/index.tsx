@@ -25,7 +25,7 @@ function RangeSlider ({minLevel, maxLevel, value, onChange, id} : RangeSliderPro
                 min={0}
                 max={210}
                 defaultValue={[0,210]}
-                ariaLabel={['Lower thumb', 'Upper thumb']}
+                ariaLabel={[`${id} Lower thumb`, `${id} Upper thumb`]}
                 ariaValuetext={state => `Thumb value ${state.valueNow}`}
                 renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
                 pearling

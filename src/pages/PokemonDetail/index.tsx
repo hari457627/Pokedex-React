@@ -57,9 +57,11 @@ function DetailPage({ id, prevDisabled, nextDisabled, pokemonInfo, onClose, prev
     const fetchPokemonAllDetails = async (id: string | number) => {
         setLoading(true);
         try {
-            const arr = [fetchPokemonDetails(id), fetchPokemonSnW(id), fetchPokemonEvolutionChain(id)];
+            const arr = [fetchPokemonDetails(id), fetchPokemonSnW(id)];
             const pokemonAllDetails = await axios.all(arr);
-            const finalData = pokemonAllDetails.reduce((acc: any, item: any) => ({ ...acc, ...item.data }), {});
+            let finalData = pokemonAllDetails.reduce((acc: any, item: any) => ({ ...acc, ...item.data }), {});
+            const pokemonEvolutionDetails = await services.fetchData(finalData?.evolution_chain?.url);
+            finalData = { ...finalData, ...pokemonEvolutionDetails.data };
             setPokemonDetails(finalData);
         } catch (err) {
             setError(true);
@@ -115,7 +117,6 @@ function DetailPage({ id, prevDisabled, nextDisabled, pokemonInfo, onClose, prev
         fn(data);
         const evolutionPokemonDetailsRes = await axios.all(arr.map(async (item: string) => services.fetchData(urls.pokemonDetails(item))));
         const evolutionPokemonDetails = evolutionPokemonDetailsRes.filter((item:any) => !item.error).map((item:any) => item.data);
-        console.log('sess', evolutionPokemonDetails);
         setEvolutionDetailsArr(evolutionPokemonDetails);
     };
 
@@ -143,7 +144,7 @@ function DetailPage({ id, prevDisabled, nextDisabled, pokemonInfo, onClose, prev
                                         {name}
                                     </h1>
                                     <div className="detail-page-mobile-header-actions">
-                                        <Button className="range-filter-header-actions" onClick={onClose}>
+                                        <Button ariaLabel={'close pokemon details dialog'} className="range-filter-header-actions" onClick={onClose}>
                                             <HighlightOffIcon />
                                         </Button>
                                     </div>
@@ -165,13 +166,13 @@ function DetailPage({ id, prevDisabled, nextDisabled, pokemonInfo, onClose, prev
                                             {id}
                                         </div>
                                         <div className="detail-page-actions">
-                                            <Button className="range-filter-header-actions" disabled={prevDisabled} onClick={handlePreviousClicked}>
+                                            <Button ariaLabel={`click to view about previous pokemon details`} className="range-filter-header-actions" disabled={prevDisabled} onClick={handlePreviousClicked}>
                                                 <ArrowCircleLeftOutlinedIcon />
                                             </Button>
-                                            <Button className="range-filter-header-actions" onClick={onClose}>
+                                            <Button ariaLabel={'close pokemon details dialog'} className="range-filter-header-actions" onClick={onClose}>
                                                 <HighlightOffIcon />
                                             </Button>
-                                            <Button className="range-filter-header-actions" disabled={nextDisabled} onClick={handleNextClicked}>
+                                            <Button ariaLabel={`click to view about next pokemon details`} className="range-filter-header-actions" disabled={nextDisabled} onClick={handleNextClicked}>
                                                 <ArrowCircleRightOutlinedIcon />
                                             </Button>
                                         </div>
@@ -313,10 +314,10 @@ function DetailPage({ id, prevDisabled, nextDisabled, pokemonInfo, onClose, prev
                             </div>
                             <div className="detail-page-mobile-action-block">
                                 <div className="range-filter-footer-actions mobile-filter-footer-block">
-                                    <Button className="range-filter-footer-actions-apply flex-wrap" disabled={prevDisabled} onClick={handlePreviousClicked}>
+                                    <Button ariaLabel={`click to view about previous pokemon details`} className="range-filter-footer-actions-apply flex-wrap" disabled={prevDisabled} onClick={handlePreviousClicked}>
                                         <WestIcon /> <span style={{paddingLeft: 10}}>{prevPokemonName}</span>
                                     </Button>
-                                    <Button className="range-filter-footer-actions-apply flex-wrap" disabled={nextDisabled} onClick={handleNextClicked}>
+                                    <Button ariaLabel={`click to view about next pokemon details`} className="range-filter-footer-actions-apply flex-wrap" disabled={nextDisabled} onClick={handleNextClicked}>
                                         <span style={{paddingRight: 10}}>{nextPokemonName}</span> <EastIcon />
                                     </Button>
                                 </div>

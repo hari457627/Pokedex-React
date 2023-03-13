@@ -18,7 +18,7 @@ function RangeFilter({ statsData, onChange, onReset, onApply, onClose }: RangeFi
                 <div className="range-filter-header">
                     Select Stats
                 </div>
-                <Button className="range-filter-header-actions" onClick={onClose}>
+                <Button ariaLabel="close stats filter" className="range-filter-header-actions" onClick={onClose}>
                     <HighlightOffIcon />
                 </Button>
             </div>
@@ -26,10 +26,10 @@ function RangeFilter({ statsData, onChange, onReset, onApply, onClose }: RangeFi
                 <StatsRange statsData={statsData} onChange={onChange}/>
             </div>
             <div className="range-filter-footer-actions">
-                <Button onClick={onReset} className="range-filter-footer-actions-reset">
+                <Button ariaLabel="click to reset filters" onClick={onReset} className="range-filter-footer-actions-reset">
                     Reset
                 </Button>
-                <Button onClick={onApply} className="range-filter-footer-actions-apply">
+                <Button ariaLabel="click to apply filters" onClick={onApply} className="range-filter-footer-actions-apply">
                     Apply
                 </Button>
             </div>
