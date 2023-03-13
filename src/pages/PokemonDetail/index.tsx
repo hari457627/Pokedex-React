@@ -139,18 +139,18 @@ function DetailPage({ id, prevDisabled, nextDisabled, pokemonInfo, onClose, prev
                         <>
                             <div className="detail-page-mobile-header-block">
                                 <div className="detail-page-mobile-header-title-block">
-                                    <div className="detail-page-pokemon-title">
+                                    <h1 className="detail-page-pokemon-title">
                                         {name}
-                                    </div>
+                                    </h1>
                                     <div className="detail-page-mobile-header-actions">
                                         <Button className="range-filter-header-actions" onClick={onClose}>
                                             <HighlightOffIcon />
                                         </Button>
                                     </div>
                                 </div>
-                                <div className="detail-page-pokemon-index">
+                                <h2 className="detail-page-pokemon-index">
                                     {id}
-                                </div>
+                                </h2>
                             </div>
                             <div className="detail-page-header-block">
                                 <div className="detail-page-profile-image">
@@ -313,11 +313,11 @@ function DetailPage({ id, prevDisabled, nextDisabled, pokemonInfo, onClose, prev
                             </div>
                             <div className="detail-page-mobile-action-block">
                                 <div className="range-filter-footer-actions mobile-filter-footer-block">
-                                    <Button className="range-filter-footer-actions-apply" disabled={prevDisabled} onClick={handlePreviousClicked}>
-                                        <WestIcon /> <span>{prevPokemonName}</span>
+                                    <Button className="range-filter-footer-actions-apply flex-wrap" disabled={prevDisabled} onClick={handlePreviousClicked}>
+                                        <WestIcon /> <span style={{paddingLeft: 10}}>{prevPokemonName}</span>
                                     </Button>
-                                    <Button className="range-filter-footer-actions-apply" disabled={nextDisabled} onClick={handleNextClicked}>
-                                        <span>{nextPokemonName}</span> <EastIcon />
+                                    <Button className="range-filter-footer-actions-apply flex-wrap" disabled={nextDisabled} onClick={handleNextClicked}>
+                                        <span style={{paddingRight: 10}}>{nextPokemonName}</span> <EastIcon />
                                     </Button>
                                 </div>
                             </div>

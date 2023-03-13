@@ -1,5 +1,6 @@
 import Button from '@mui/material/Button';
 import { ReactNode } from 'react';
+import "./style.scss";
 
 interface ButtonProps {
     children?: string | ReactNode,
@@ -20,11 +21,12 @@ function ButtonComp({children, className, id, onClick, disabled, style, endIcon,
     return (
         <Button 
             id={id}
-            className={className}
+            className={`${className} global-button`}
             onClick={handleClick}
             style={style}
             disabled={disabled}
             endIcon={endIcon}
+            disableFocusRipple
             {...rest}
         >
             { children }

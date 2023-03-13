@@ -291,7 +291,7 @@ function Dashboard() {
     return (
         <div className="main">
             <div className="heading-block">
-                <div className="heading">Pokédex</div>
+                <h1 className="heading">Pokédex</h1>
                 <div className="vertical-line"></div>
                 <div className="sub-heading">Search for any Pokémon that exists on the planet</div>
             </div>
@@ -342,23 +342,26 @@ function Dashboard() {
                     </div>
                 </div>
             </div>
-            <div className="list-block">
-                {
-                    loading ? <Loader className="loader" />
-                        :
-                        fetchError ? <div>OOPS! Error in fetching data. Please reload the page...</div>
+            <div aria-live="polite">
+                <span className="hidden">{data?.length} pokemons found</span>
+                <ul className="list-block">
+                    {
+                        loading ? <Loader className="loader" />
                             :
-                            data?.map((item: any, index: number) => {
-                                const { id, name, types } = item;
-                                const imgUrl = item.sprites?.other?.dream_world?.front_default || noImg;
-                                const typeNames = types?.map((item: any) => item?.type?.name);
-                                const bgColorObj = utils.getBackgroundColor(typeNames);
+                            fetchError ? <div>OOPS! Error in fetching data. Please reload the page...</div>
+                                :
+                                data?.map((item: any, index: number) => {
+                                    const { id, name, types } = item;
+                                    const imgUrl = item.sprites?.other?.dream_world?.front_default || noImg;
+                                    const typeNames = types?.map((item: any) => item?.type?.name);
+                                    const bgColorObj = utils.getBackgroundColor(typeNames);
 
-                                return (
-                                    <Card style={bgColorObj} pokemonData={item} renderTitle={true} key={index} id={id} name={name} imgUrl={imgUrl} onClick={handlePokemonClicked} index={index} />
-                                )
-                            })
-                }
+                                    return (
+                                        <li aria-label={`click to view about ${name} pokemon`}><Button className="list-item-button" onClick={(e:React.MouseEvent<HTMLButtonElement>) => handlePokemonClicked(e, id, item, index)}><Card style={bgColorObj} pokemonData={item} renderTitle={true} key={index} id={id} name={name} imgUrl={imgUrl} index={index} /></Button></li>
+                                    )
+                                })
+                    }
+                </ul>
             </div>
             {
                 (!loading && pokemonsData?.results?.length)

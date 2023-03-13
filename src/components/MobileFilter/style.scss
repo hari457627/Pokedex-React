@@ -3,7 +3,7 @@
 
 .mobile-filter-block{
     padding: pxToRem(28) pxToRem(30) pxToRem(20) pxToRem(30);
-    height: 95vh;
+    height: inherit;
 }
 
 .mobile-filter-header-block{
@@ -19,7 +19,7 @@
     flex-direction: column;
     gap: pxToRem(20);
     overflow-y: scroll;
-    height: 80vh;
+    height: calc(100svh - pxToRem(155));
     padding-top: pxToRem(20);
     padding-bottom: pxToRem(20);
 }

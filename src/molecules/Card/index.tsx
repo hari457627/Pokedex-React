@@ -22,9 +22,9 @@ function Card (pokemonDetails:cardProps){
     if(style) styleObj = {...styleObj, ...style};
 
     return (
-        <div className="card-block" style={styleObj} onClick={handleClick}>
+        <div className="card-block" style={styleObj} onClick={handleClick} role="button">
             <div className="card-image-block">
-                <img src={imgUrl} />
+                <img src={imgUrl} alt={name || 'pokemon image'}/>
             </div>
             {
                 renderTitle ?

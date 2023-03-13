@@ -20,7 +20,7 @@ const arr = ['Type', 'Gender', 'Stats'];
 
 function MobileFilter({ typesMasterData, genderMasterData, selectedGenders, selectedTypes, statsData, onChange, onClose, onReset, onApply, onStatsChange }: MobileFilterProps) {
     return (
-        <div style={{position: 'relative'}}>
+        <div style={{position: 'relative', minHeight: '100svh'}}>
             <div className="mobile-filter-block">
                 <div className="mobile-filter-header-block">
                     <div className="mobile-filter-header">

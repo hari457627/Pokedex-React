@@ -1,0 +1,10 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.global-button{
+    width: auto;
+}
+
+.global-button:focus {
+    box-shadow: 0 pxToRem(3) pxToRem(10) rgb(0 0 0 / 0.2);
+}
